@@ -38,7 +38,7 @@ class Weather extends Component {
     const weatherIcon = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
     return (
-      <li>
+      <li className="fav-weather">
         <h2>{city}</h2>
         <p>{weather}</p>
         <img src={weatherIcon} alt={weather} />

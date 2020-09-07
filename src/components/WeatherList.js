@@ -9,7 +9,7 @@ class WeatherList extends Component {
   render() {
     const { favCities } = this.props;
     const list = favCities.map((city, i) => <Weather key={i} city={city} />);
-    return <ul>{list}</ul>;
+    return <ul className="weather-list">{list}</ul>;
   }
 }
 
