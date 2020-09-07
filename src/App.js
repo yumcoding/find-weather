@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css";
 import Header from "./components/Header";
 import Modal from "./components/Modal";
+import { findAllByDisplayValue } from "@testing-library/react";
 
 class App extends Component {
   state = {
@@ -15,7 +16,7 @@ class App extends Component {
       description: "",
       icon: "",
     },
-    showModal: false,
+    showing: false,
   };
 
   getWeather = async () => {
@@ -43,17 +44,27 @@ class App extends Component {
     this.getWeather();
   }
 
-  handleModal = () => {
-    this.setState({ showModal: !this.state.showModal });
+  showModal = () => {
+    this.setState({ showing: true });
+  };
+
+  hideModal = () => {
+    this.setState({ showing: false });
   };
 
   render() {
-    const { data, showModal } = this.state;
+    const { data, showing } = this.state;
     return (
       <div className="container">
         <Header data={data} />
-        <button onClick={this.handleModal}>More Details</button>
-        {showModal ? <Modal data={data} /> : ""}
+        <button className="btn-modal" onClick={this.showModal}>
+          More Details
+        </button>
+        {showing ? (
+          <Modal data={data} modalState={showing} hideModal={this.hideModal} />
+        ) : (
+          ""
+        )}
       </div>
     );
   }
