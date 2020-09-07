@@ -43,11 +43,17 @@ class App extends Component {
     this.getWeather();
   }
 
+  handleModal = () => {
+    this.setState({ showModal: !this.state.showModal });
+  };
+
   render() {
-    const { data } = this.state;
+    const { data, showModal } = this.state;
     return (
       <div className="container">
         <Header data={data} />
+        <button onClick={this.handleModal}>More Details</button>
+        {showModal ? <Modal data={data} /> : ""}
       </div>
     );
   }
