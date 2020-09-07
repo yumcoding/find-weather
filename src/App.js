@@ -3,7 +3,6 @@ import axios from "axios";
 import "./App.css";
 import Header from "./components/Header";
 import Modal from "./components/Modal";
-import { findAllByDisplayValue } from "@testing-library/react";
 
 class App extends Component {
   state = {
@@ -19,10 +18,10 @@ class App extends Component {
     showing: false,
   };
 
-  getWeather = async () => {
+  getWeather = async (latitude, longitude) => {
     const API_KEY = "8f667f21fc1b75023d24daa366a24cbb";
     const { data } = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=Berlin&units=metric&appid=${API_KEY}`
+      `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${API_KEY}&units=metric`
     );
     const { name } = data;
     const { temp, temp_max, temp_min } = data.main;
@@ -40,8 +39,15 @@ class App extends Component {
     });
   };
 
+  getPosition = () => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const { latitude, longitude } = position.coords;
+      this.getWeather(latitude, longitude);
+    });
+  };
+
   componentDidMount() {
-    this.getWeather();
+    this.getPosition();
   }
 
   showModal = () => {
