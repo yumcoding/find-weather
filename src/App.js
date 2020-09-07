@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
+import Header from "./components/Header";
 
 class App extends Component {
   state = {
@@ -37,7 +38,20 @@ class App extends Component {
   }
 
   render() {
-    return <div>Sanity Check</div>;
+    const {
+      city,
+      temp,
+      maxTemp,
+      minTemp,
+      weather,
+      description,
+      icon,
+    } = this.state;
+    return (
+      <div className="container">
+        <Header city={city} weather={weather} temp={temp} />
+      </div>
+    );
   }
 }
 

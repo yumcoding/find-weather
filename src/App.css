@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+/* container */
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header */
+.header {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.header .city {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.header .weather {
+  margin: 0.2rem 0;
+  color: #424242;
+}
+
+.header .temp {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0.3rem 0;
+}
