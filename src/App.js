@@ -3,6 +3,8 @@ import axios from "axios";
 import "./App.css";
 import Header from "./components/Header";
 import Modal from "./components/Modal";
+import Search from "./components/Search";
+import WeatherList from "./components/WeatherList";
 
 class App extends Component {
   state = {
@@ -16,6 +18,7 @@ class App extends Component {
       icon: "",
     },
     showing: false,
+    favCities: [],
   };
 
   getWeather = async (latitude, longitude) => {
@@ -58,8 +61,12 @@ class App extends Component {
     this.setState({ showing: false });
   };
 
+  handleCreate = (city) => {
+    this.setState({ favCities: [...this.state.favCities, city] });
+  };
+
   render() {
-    const { data, showing } = this.state;
+    const { data, showing, favCities } = this.state;
     return (
       <div className="container">
         <Header data={data} />
@@ -71,6 +78,8 @@ class App extends Component {
         ) : (
           ""
         )}
+        <Search onCreate={this.handleCreate} />
+        <WeatherList favCities={favCities} />
       </div>
     );
   }
