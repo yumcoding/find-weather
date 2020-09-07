@@ -1,6 +1,6 @@
 import React from "react";
 
-function Header({ city, weather, temp }) {
+function Header({ data: { city, weather, temp } }) {
   return (
     <div className="header">
       <h2 className="city">{city}</h2>

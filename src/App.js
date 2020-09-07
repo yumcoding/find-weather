@@ -2,16 +2,20 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
 import Header from "./components/Header";
+import Modal from "./components/Modal";
 
 class App extends Component {
   state = {
-    city: "",
-    temp: "",
-    maxTemp: "",
-    minTemp: "",
-    weather: "",
-    description: "",
-    icon: "",
+    data: {
+      city: "",
+      temp: "",
+      maxTemp: "",
+      minTemp: "",
+      weather: "",
+      description: "",
+      icon: "",
+    },
+    showModal: false,
   };
 
   getWeather = async () => {
@@ -23,13 +27,15 @@ class App extends Component {
     const { temp, temp_max, temp_min } = data.main;
     const { main, description, icon } = data.weather[0];
     this.setState({
-      city: name,
-      temp,
-      maxTemp: temp_max,
-      minTemp: temp_min,
-      weather: main,
-      description,
-      icon,
+      data: {
+        city: name,
+        temp,
+        maxTemp: temp_max,
+        minTemp: temp_min,
+        weather: main,
+        description,
+        icon,
+      },
     });
   };
 
@@ -38,18 +44,10 @@ class App extends Component {
   }
 
   render() {
-    const {
-      city,
-      temp,
-      maxTemp,
-      minTemp,
-      weather,
-      description,
-      icon,
-    } = this.state;
+    const { data } = this.state;
     return (
       <div className="container">
-        <Header city={city} weather={weather} temp={temp} />
+        <Header data={data} />
       </div>
     );
   }
