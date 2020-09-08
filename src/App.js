@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
 import Header from "./components/Header";
+import Button from "./components/Button";
 import Modal from "./components/Modal";
 import Search from "./components/Search";
 import WeatherList from "./components/WeatherList";
@@ -70,9 +71,7 @@ class App extends Component {
     return (
       <div className="container">
         <Header data={data} />
-        <button className="btn-modal" onClick={this.showModal}>
-          More Details
-        </button>
+        <Button showModal={this.showModal} />
         {showing ? (
           <Modal data={data} modalState={showing} hideModal={this.hideModal} />
         ) : (
