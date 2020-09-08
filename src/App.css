@@ -3,7 +3,6 @@
   width: 1000px;
   margin: 3rem 0;
   padding: 0 3rem;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -177,4 +176,30 @@
   font-weight: 400;
   font-size: 1.8rem;
   margin: 0.2rem 0;
+}
+
+@media screen and (max-width: 1050px) {
+  .container {
+    width: 700px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 600px;
+  }
+  .weather-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    width: 300px;
+  }
+  .weather-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
