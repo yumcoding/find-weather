@@ -140,7 +140,7 @@
 /* Weather List */
 .weather-list {
   list-style: none;
-  width: 100vw;
+  width: 100%;
   margin: 3rem 0;
   padding: 0 3rem;
   display: grid;
