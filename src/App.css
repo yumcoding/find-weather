@@ -10,7 +10,8 @@ body {
 
 /* container */
 .container {
-  height: 100vh;
+  padding: 0 3rem;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,7 +20,7 @@ body {
 
 /* Header */
 .header {
-  margin: 1.5rem 0;
+  margin: 3rem 0 1.5rem;
   text-align: center;
 }
 
@@ -96,20 +97,46 @@ body {
   padding: 1rem;
 }
 
-.modal-content .modal-city {
+.modal-city,
+.fav-city {
   font-weight: 400;
   margin: 0.3rem 0;
 }
 
-.modal-content .modal-des {
+.modal-des,
+.fav-des {
   font-weight: 300;
 }
 
-.modal-content .modal-img {
+.modal-img {
   margin: 1rem 0;
   font-size: 4rem;
 }
 
-.modal-content .modal-temp {
+.modal-temp,
+.fav-temp {
   margin: 0.2rem 0;
+}
+
+/* Weather List */
+.weather-list {
+  list-style: none;
+  width: 100vw;
+  margin: 3rem 0;
+  padding: 0 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1.5rem;
+}
+
+/* Weather */
+
+.fav-weather {
+  width: 200px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 0.4rem;
+  text-align: center;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
 }

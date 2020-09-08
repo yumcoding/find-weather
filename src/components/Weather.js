@@ -39,10 +39,10 @@ class Weather extends Component {
 
     return (
       <li className="fav-weather">
-        <h2>{city}</h2>
-        <p>{weather}</p>
+        <h2 className="fav-city">{city}</h2>
+        <p className="fav-des">{weather}</p>
         <img src={weatherIcon} alt={weather} />
-        <h1>{temp}</h1>
+        <h1 className="fav-temp">{temp}</h1>
       </li>
     );
   }
