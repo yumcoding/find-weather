@@ -18,8 +18,12 @@ class Search extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="search" onSubmit={this.handleSubmit}>
+        <div className="search-icon">
+          <i className="fas fa-search"></i>
+        </div>
         <input
+          className="search-input"
           type="text"
           placeholder="Enter your favourite city"
           value={this.state.city}

@@ -118,6 +118,31 @@ body {
   margin: 0.2rem 0;
 }
 
+/* Search */
+.search {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.search-input {
+  border: none;
+  font-size: 1.5rem;
+}
+
+.search-input::placeholder {
+  color: #000;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
 /* Weather List */
 .weather-list {
   list-style: none;
