@@ -97,14 +97,12 @@ body {
   padding: 1rem;
 }
 
-.modal-city,
-.fav-city {
+.modal-city {
   font-weight: 400;
   margin: 0.3rem 0;
 }
 
-.modal-des,
-.fav-des {
+.modal-des {
   font-weight: 300;
 }
 
@@ -113,8 +111,7 @@ body {
   font-size: 4rem;
 }
 
-.modal-temp,
-.fav-temp {
+.modal-temp {
   margin: 0.2rem 0;
 }
 
@@ -164,4 +161,19 @@ body {
   text-align: center;
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
     0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+}
+
+.fav-city {
+  font-weight: 700;
+}
+
+.fav-des {
+  margin: 0.3rem 0;
+  font-weight: 300;
+}
+
+.fav-temp {
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin: 0.2rem 0;
 }

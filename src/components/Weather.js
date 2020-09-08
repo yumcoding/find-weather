@@ -42,7 +42,7 @@ class Weather extends Component {
         <h2 className="fav-city">{city}</h2>
         <p className="fav-des">{weather}</p>
         <img src={weatherIcon} alt={weather} />
-        <h1 className="fav-temp">{temp}</h1>
+        <h1 className="fav-temp">{temp}℃</h1>
       </li>
     );
   }
